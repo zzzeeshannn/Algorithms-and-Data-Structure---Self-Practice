@@ -23,5 +23,17 @@
 - Method 5: Reversal Algorithm
 
 ## Topic 2: Linked Lists
+Linked lists are a linear data structure which consists of two parts: a data field to store data and a reference to the next node. 
+Unlike arrays, the nodes are not saved in contiguous memory locations. 
+#### Advantages over arrays
+1. Provides the option of dynamic size allotment as compared to arrays that require to mention a fixed size on declaration. [Exception of dynamically allotted arrays.]
+2. Inserting a new element in arrays is expensive as you'll need to shift all the elements to accomodate a single new entry. 
+#### Disadvantages over arrays 
+1. Does not allow for random access. We'll have to traverse through the entire list of nodes. 
+2. Need to allocate extra space for a pointer with every data module. 
+3. One of the advantages of using arrays was cache locality. Since the nodes are not saved in contiguous memory locations, it's not cache friendly. (Arrays are faster in accessing elements.)
+### Singly Linked Lists 
+### Circular Linked Lists 
+### Doubly Linked Lists 
 ## Topic 3: Stack
 ## Topic 4: Queue
