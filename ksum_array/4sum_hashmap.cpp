@@ -59,7 +59,7 @@ int countMethod2(int defaultArray[], int arrayLength, int target){
     int finalCount = 0;
     int sum = 0;
     // Initializing the indices iterators
-    int i, j, k, l;
+    int i, j;
 
     // Defining a hash map here
     std::unordered_map<int, int> records;

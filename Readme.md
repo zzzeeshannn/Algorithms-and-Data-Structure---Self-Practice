@@ -1,6 +1,18 @@
 # A self study and practice repository for Data Structures
 
 ## Topic 1: Arrays 
+### Programs/Problems solved for arrays:
+1. Array Rotation
+- Method 1: Using "temp" array [Time and Space Complexity: O(n), O(d) where d is the rotation of the number of elements in the array]
+- Method 2: Rotate one by one [Time and Space Complexity: O(n*d), O(1) where d is the rotation of the number of elements in the array]
+- Method 3: Juggling Problem [Time and Space Complexity: O(n), O(1)]
+- Method 4: Block Swap
+- Method 5: Reversal Algorithm
+
+2. ksum-array
+Problem Statement- To find if sum of k-elements in the array is equal to a given target.
+   - Naive Approach
+   - Hashmaps: Two approaches 
 ### Key Points: 
 1. In C, arrays have fixed size. 
 ### Advantages: 
@@ -14,13 +26,7 @@
 ### Interesting observations: 
 1. C++ does not throw an error for index-out-of-bounds.
 2. Array stored in continuous memory locations.
-### Programs/Problems solved for arrays: 
-1. Array Rotation
-- Method 1: Using "temp" array [Time and Space Complexity: O(n), O(d) where d is the rotation of the number of elements in the array]
-- Method 2: Rotate one by one [Time and Space Complexity: O(n*d), O(1) where d is the rotation of the number of elements in the array]
-- Method 3: Juggling Problem [Time and Space Complexity: O(n), O(1)]
-- Method 4: Block Swap
-- Method 5: Reversal Algorithm
+
 
 ## Topic 2: Linked Lists
 Linked lists are a linear data structure which consists of two parts: a data field to store data and a reference to the next node. 
