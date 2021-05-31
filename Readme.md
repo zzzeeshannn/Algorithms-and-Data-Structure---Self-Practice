@@ -35,5 +35,9 @@ Unlike arrays, the nodes are not saved in contiguous memory locations.
 ### Singly Linked Lists 
 ### Circular Linked Lists 
 ### Doubly Linked Lists 
-## Topic 3: Stack
-## Topic 4: Queue
+## Topic 3: Vectors  
+## Topic 4: Hashmap in C++
+### Using Unordered Map: 
+### Using Unordered Sets: 
+## Topic 5: Stack
+## Topic 6: Queue
