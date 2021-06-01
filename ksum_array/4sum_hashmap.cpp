@@ -87,15 +87,22 @@ int countMethod2(int defaultArray[], int arrayLength, int target){
 
 int main(){
     // Defining an array here
-    int defaultArray[] = {4, 5, 3, 1, 2, 4};
+    int defaultArray[] = {9, 5, 3, 1, -1, 7, 2, 4, 15};
     int arrayLength = sizeof(defaultArray)/ sizeof(defaultArray[0]);
     // Target sum for quadruples
-    int target = 13;
+    int target = 18;
     // Testing
     //std::cout << "Size of the array is: " << sizeof(defaultArray)/ sizeof(defaultArray[0]) << endl;
 
+    std::cout << "The input array is: ";
+    for (int i = 0; i < arrayLength; ++i) {
+        std::cout << defaultArray[i] << " ";
+    }
+
+    std::cout << "\nThe target sum is: " << target;
+
     int output1 = countMethod1(defaultArray, arrayLength, target);
-    std::cout << "The total pairs of quadruples meeting the target according to Method 1 is: " << output1 << endl;
+    std::cout << "\nThe total pairs of quadruples meeting the target according to Method 1 is: " << output1 << endl;
 
     int output2 = countMethod2(defaultArray, arrayLength, target);
     std::cout << "The total pairs of quadruples meeting the target according to Method 2 is: " << output2 << endl;
