@@ -44,6 +44,8 @@ Unlike arrays, the nodes are not saved in contiguous memory locations.
 ## Topic 3: Vectors  
 ## Topic 4: Hashmap in C++
 ### Using Unordered Map: 
+#### Programs:
+1. Given an array of size n and a number k, find all elements that appear more than n/k times
 ### Using Unordered Sets: 
 ## Topic 5: Stack
 ## Topic 6: Queue
