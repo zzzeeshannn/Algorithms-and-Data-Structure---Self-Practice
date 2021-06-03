@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <string>
 
 void print_array(int defaultArray[], int len){
     std::cout << "The array is: ";
