@@ -16,11 +16,12 @@ void print_queue(priority_queue<int> pq){
     cout << endl;
 }
 
-void print_queue2(priority_queue<int, vector<int>, greater<int>> pq){
-    priority_queue<int, vector<int>, greater<int>> temp = pq;
+void print_queue2(priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq){
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> temp = pq;
     cout << "The elements of the queue are: ";
     while(!temp.empty()){
-        cout << temp.top() << " ";
+        auto out = temp.top();
+        cout << out.first << " " << out.second << " ";
         temp.pop();
     }
     cout << endl;
@@ -44,16 +45,17 @@ int main(){
 
     // We can also change the priority queue to use min heap instead
     // Initializing a priority queue with min heap here
-    priority_queue<int, vector<int>, greater<int>> minHeapQueue;
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> minHeapQueue;
 
     // Adding elements
-    minHeapQueue.push(15);
-    minHeapQueue.push(30);
-    minHeapQueue.push(8);
-    minHeapQueue.push(100);
-    minHeapQueue.push(78);
+    minHeapQueue.push({30, 1});
+    minHeapQueue.push({15, 2});
+    minHeapQueue.push({45, 3});
+    minHeapQueue.push({85, 4});
+    minHeapQueue.push({25, 5});
 
     // Printing all the elements in the Queue
     cout << "----- MIN HEAP -----" << endl;
     print_queue2(minHeapQueue);
+
 }
