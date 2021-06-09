@@ -49,3 +49,12 @@ Unlike arrays, the nodes are not saved in contiguous memory locations.
 ### Using Unordered Sets: 
 ## Topic 5: Stack
 ## Topic 6: Queue
+Queue is a linear data structure, like Stacks. However, Stack uses LIFO order whereas Queue uses FIFO. 
+The main functions in a Queue are: 
+1. Enqueue
+2. Dequeue
+3. Front 
+4. Rear
+### Priority Queue 
+Priority queue is an extension of Queue where every element of the queue has a priority associated with it. 
+The element with the highest priority is popped out first.
