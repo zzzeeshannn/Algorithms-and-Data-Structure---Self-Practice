@@ -6,6 +6,7 @@
 using namespace std;
 
 // Function to rotate the elements of the array by one
+
 // This is used in Method 2
 int left_rotate(int rotationArray[], int len){
 
