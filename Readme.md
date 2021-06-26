@@ -58,3 +58,5 @@ The main functions in a Queue are:
 ### Priority Queue 
 Priority queue is an extension of Queue where every element of the queue has a priority associated with it. 
 The element with the highest priority is popped out first.
+
+## BST
