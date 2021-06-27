@@ -64,7 +64,6 @@ public:
             return (1 + countNodes(root->left) + countNodes(root->right));
         }
     }
-
     int countLeafNodes(Node *root){
         // A recursive function to count the number of leaf nodes in the tree
         // Time Complexity: O(N)
@@ -78,7 +77,6 @@ public:
             return (countLeafNodes(root->left) + countLeafNodes(root->right));
         }
     }
-
     int countNonLeafNodes(Node *root){
         // A recursive function to count the number of non-leaf nodes in the tree
         // Time Complexity: O(N)
@@ -90,6 +88,47 @@ public:
         }
         else{
             return (1 + countNonLeafNodes(root->left) + countNonLeafNodes(root->right));
+        }
+
+    }
+
+    Node * kSmallest (Node *root, int k){
+        // This function is used to find the k smallest element in the tree
+        if (root == NULL){
+            return NULL;
+        }
+        int value = countNodes(root->left) + 1;
+
+        if(value == k){
+            return root;
+        }
+        else if(value > k){
+            return kSmallest(root->left, k);
+        }
+        else{
+            // Why "k-value"?
+            return kSmallest(root->right, k-value);
+        }
+    }
+    Node * kLargest(Node *root, int k){
+        // This function is used to find the k largest element in the tree
+        // Case 1: Root is NULL
+        if (root == NULL){
+            return NULL;
+        }
+        // Find the length of right subtree
+        int value = countNodes(root->right) + 1;
+        // Case 1: length == k
+        if (value == k){
+            return root;
+        }
+        // Case 2: length > k
+        else if(value > k){
+            return kLargest(root->right, k);
+        }
+        // Case 3: length < k
+        else{
+            return kLargest(root->left, k);
         }
     }
 
@@ -116,6 +155,11 @@ int main(){
     tree.insert(root, 55);
     tree.insert(root, 20);
 
+    // Printing out the tree in-order
+    cout << "The values in the tree are: ";
+    tree.Inorder(root);
+    cout << endl << endl;
+
     // Printing the number of nodes in the tree
     int count = tree.countNodes(root);
     cout << "The total number of nodes in the tree are: " << count << endl;
@@ -128,8 +172,16 @@ int main(){
     int NonLeafCount = tree.countNonLeafNodes(root);
     cout << "The total number of non-leaf nodes in the tree are: " << NonLeafCount << endl;
 
-    // Printing out the tree in-order
-    cout << "The values in the tree are: ";
-    tree.Inorder(root);
+    // Finding the k smallest element
+    cout << endl;
+    int s = 2;
+    Node *smallest = tree.kSmallest(root, s);
+    cout << "The " << s << " smallest element in the tree is: " << smallest->key << endl;
+
+    // Finding the k largest element
+    int l = 2;
+    Node *largest = tree.kLargest(root, l);
+    cout << "The " << l << " largest element in the tree is: " << largest->key << endl;
+
     return 0;
 }
