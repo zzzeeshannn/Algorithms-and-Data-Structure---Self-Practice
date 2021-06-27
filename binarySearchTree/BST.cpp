@@ -152,12 +152,67 @@ public:
         if(root == NULL){
             return true;
         }
-        else if(index > totalNodes){
+        else if(index >= totalNodes){
             return false;
         }
         return (isCompleteTree(root->left, 2*index + 1) && isCompleteTree(root->right, 2*index + 2));
     }
 
+    bool isIdentical(Node *root1, Node *root2){
+        // This function checks if the two trees are identical
+        if (root1 == NULL && root2 == NULL){
+            return true;
+        }
+        else if(root1 != NULL && root2 != NULL){
+            return ((root1->key == root2->key) && isIdentical(root1->left, root2->left) && isIdentical(root1->right, root2->right));
+        }
+    }
+
+    Node * successor(Node *root, int key){
+        // This function finds the successor node given a key
+        // Case 1: The current node is null
+        if (root == NULL){
+            return NULL;
+        }
+        // Case 2: The value of the node is less than or equal to the key
+        if (root->key <= key){
+            return successor(root->right, key);
+        }
+        // Case 3: The value of the node is greater than the key
+        else{
+            Node *left = successor(root->left, key);
+            // Case 3.1: If left is not empty
+            if(left != NULL){
+                return left;
+            }
+            // Case 3.2: Left is empty
+            else{
+                return root;
+            }
+        }
+    }
+
+    Node * predecessor(Node *root, int key){
+        // This function finds the node preceding the key
+        // Case 1: Root is null
+        if (root == NULL){
+            return NULL;
+        }
+        // Case 2: Value of the node is >= the key
+        else if(root->key >= key){
+            return predecessor(root->left, key);
+        }
+        // Case 3: Value of node is < the key
+        else{
+            Node *right = predecessor(root->right, key);
+            if(right != NULL){
+                return right;
+            }
+            else{
+                return root;
+            }
+        }
+    }
     void Inorder(Node *root) {
         // This function prints the tree in sorted order
         if (!root){
@@ -228,5 +283,14 @@ int main(){
         cout << "It is not a complete tree" << endl;
     }
 
+    // Finding the successor
+    int k = 10;
+    Node *successor = tree.successor(root, k);
+    cout << endl << "The successor of the key " << k << " is: " << successor->key << endl;
+
+    // Finding the successor
+    int m = 20;
+    Node *predecessor = tree.predecessor(root, m);
+    cout << "The predecessor of the key " << m << " is: " << predecessor->key << endl;
     return 0;
 }
