@@ -132,6 +132,32 @@ public:
         }
     }
 
+    bool isFullTree(Node *root){
+        // This function finds out if the current tree is a full tree
+        if(root == NULL){
+            return true;
+        }
+        else if(root->left == NULL && root->right == NULL){
+            return true;
+        }
+        else if(root->left != NULL && root->right != NULL){
+            return (isFullTree(root->left) && isFullTree(root->right));
+        }
+        return false;
+    }
+    bool isCompleteTree(Node *root, int index){
+        // This function is used to find if the tree is a complete tree
+        int totalNodes = countNodes(root);
+
+        if(root == NULL){
+            return true;
+        }
+        else if(index > totalNodes){
+            return false;
+        }
+        return (isCompleteTree(root->left, 2*index + 1) && isCompleteTree(root->right, 2*index + 2));
+    }
+
     void Inorder(Node *root) {
         // This function prints the tree in sorted order
         if (!root){
@@ -182,6 +208,25 @@ int main(){
     int l = 2;
     Node *largest = tree.kLargest(root, l);
     cout << "The " << l << " largest element in the tree is: " << largest->key << endl;
+
+    // Finding if the tree is a full tree
+    bool full = tree.isFullTree(root);
+    cout << endl;
+    if(full){
+        cout << "It is a full tree" << endl;
+    }
+    else{
+        cout << "It is not a full tree" << endl;
+    }
+
+    // Finding if the tree is a complete tree
+    bool complete = tree.isCompleteTree(root, 0);
+    if(complete){
+        cout << "It is a complete tree" << endl;
+    }
+    else{
+        cout << "It is not a complete tree" << endl;
+    }
 
     return 0;
 }
