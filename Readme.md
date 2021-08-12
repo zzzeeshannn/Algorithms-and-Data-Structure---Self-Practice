@@ -68,4 +68,6 @@ quickUnion is better than quickFind!
 This method improves on the quickUnion function.
 rankUnion optimizes the quickUnion algo by using rank of the vertices for the union function.
 ####Path Compression Optimization 
-THis method improves on the Find function in the quickUnion algo by using recursion to avoid recalculating parent/root nodes.
+This method improves on the Find function in the quickUnion algo by using recursion to avoid recalculating parent/root nodes.
+#### Final disjoint set
+The final optimized method uses rankUnion for the union operation and Path compression for the find operation.
