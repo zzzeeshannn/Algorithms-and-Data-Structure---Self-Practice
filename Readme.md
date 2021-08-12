@@ -63,3 +63,6 @@ The element with the highest priority is popped out first.
 #### quickFind 
 #### quickUnion 
 quickUnion is better than quickFind!
+(Worst Case: Straight tree)
+####rankUnion 
+rankUnion optimizes the quickUnion algo by using rank of the vertices for the union function
