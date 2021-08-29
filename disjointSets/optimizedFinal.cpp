@@ -73,9 +73,6 @@ public:
 int main(){
     disjointSet d(10);
 
-    // Connecting the nodes
-    // 1-2-5-6-7 3-8-9 4
-
     d.unionFunction(1, 2);
     d.unionFunction(2, 5);
     d.unionFunction(5, 6);
