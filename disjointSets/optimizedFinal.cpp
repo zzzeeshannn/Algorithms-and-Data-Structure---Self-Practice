@@ -1,8 +1,6 @@
 //
 // Created by Zeeshan Shaikh on 8/12/21.
 //
-
-
 // This algorithm combines the rankUnion and Path Compression for optimized Union and Find functions
 
 #include <iostream>
