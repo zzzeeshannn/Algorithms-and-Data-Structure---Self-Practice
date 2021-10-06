@@ -70,7 +70,7 @@ void merge_sort(int defaultArray[], int start_itr, int end_itr){
     merge_sort(defaultArray, mid_itr + 1, end_itr);
     merge(defaultArray, start_itr, mid_itr, end_itr);
 }
-
+/
 int main(){
 // Defining the array here
     int defaultArray[] = {11, 45, 67, 35, 42, 89, 7, 29, 38, 47, 56};
